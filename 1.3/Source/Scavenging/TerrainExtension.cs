@@ -30,26 +30,5 @@ namespace Scavenging
 		}
 		public int workAmount;
 		public float failChance;
-
-        public override IEnumerable<string> ConfigErrors()
-        {
-			foreach (var scavengable in scavengables)
-            {
-				if (DefDatabase<ThingDef>.GetNamedSilentFail(scavengable.thingDef) is null)
-                {
-					yield return scavengable.thingDef + " is missing";
-				}
-				if (scavengable.cannotSpawnIn != null)
-                {
-					foreach (var biome in scavengable.cannotSpawnIn)
-                    {
-						if (DefDatabase<BiomeDef>.GetNamedSilentFail(biome) is null)
-						{
-							yield return biome + " is missing";
-						}
-					}
-                }
-            }
-        }
     }
 }

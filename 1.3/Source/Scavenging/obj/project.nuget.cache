@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "n4xCF+bgnEu4QN7hZA9u8fd9i/7PNtpSAyME846bvzeVvNLLIeXSd46Tw/k0hkYLwU2epZZknvGKRkVgwQwYCQ==",
+  "dgSpecHash": "PmUA/jF6oGp8FsqxqBic3XUBZmcWqUk/d7PjiGiibyFibUo+T9ao1xepCdv6Y0E8yWUN//hLuNZVz+bvzlxlsQ==",
   "success": true,
-  "projectFilePath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Scavenging-Mod\\1.3\\Source\\Scavenging\\Scavenging.csproj",
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\Scavenging-Mod\\1.3\\Source\\Scavenging\\Scavenging.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.3.3052-beta\\krafs.rimworld.ref.1.3.3052-beta.nupkg.sha512",
     "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.1.0\\lib.harmony.2.1.0.nupkg.sha512"
