@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<LanguageData>
+
+	<SC.CannotPlaceSpotsNearToEachOther>This area is already being scavenged.</SC.CannotPlaceSpotsNearToEachOther>
+	<SC.CannotScavengeNoUsableTiles>Cannot scavenge, no usable tiles</SC.CannotScavengeNoUsableTiles>
+	<SC.Disable>Disable scavenging for</SC.Disable>
+	<SC.ScavengingFailChance>Scavenging fail chance: </SC.ScavengingFailChance>
+	<SC.ScavengingChanceFor>Scavenging chance for {0}</SC.ScavengingChanceFor>
+	<SC.BaseWorkAmount>Base scavenging work amount</SC.BaseWorkAmount>
+	<SC.SpawnAmount>Spawn amount for {0}</SC.SpawnAmount>
+</LanguageData>

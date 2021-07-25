@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<JobDef>
+		<defName>SC_Scavenging</defName>
+		<driverClass>Scavenging.JobDriver_Scavenge</driverClass>
+		<reportString>scavenging stuff</reportString>
+	</JobDef>
+
+	<WorkGiverDef>
+		<defName>SC_Scavenging</defName>
+		<label>scavenging</label>
+		<giverClass>Scavenging.WorkGiver_Scavenge</giverClass>
+		<workType>SC_Scavenging</workType>
+		<verb>scavenge</verb>
+		<gerund>scavenging</gerund>
+		<priorityInType>1</priorityInType>
+		<requiredCapacities>
+			<li>Manipulation</li>
+		</requiredCapacities>
+	</WorkGiverDef>
+
+	<WorkTypeDef>
+		<defName>SC_Scavenging</defName>
+		<labelShort>Scavenge</labelShort>
+		<pawnLabel>Scavenger</pawnLabel>
+		<gerundLabel>scavenging</gerundLabel>
+		<description>Scavenging</description>
+		<verb>Scavenge</verb>
+		<naturalPriority>950</naturalPriority>
+		<alwaysStartActive>true</alwaysStartActive>
+		<relevantSkills>
+			<li>Plants</li>
+			<li>Animals</li>
+		</relevantSkills>
+	</WorkTypeDef>
+</Defs>

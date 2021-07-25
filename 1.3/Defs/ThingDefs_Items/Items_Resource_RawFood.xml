@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef Abstract="True" Name="SC_ScavengedFoodBase" ParentName="ResourceBase">
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<Flammability>1.0</Flammability>
+			<DeteriorationRate>6</DeteriorationRate>
+			<Mass>0.018</Mass>
+		</statBases>
+		<ingestible>
+			<preferability>DesperateOnly</preferability>
+			<tasteThought>AteRawFood</tasteThought>
+		</ingestible>
+		<socialPropernessMatters>true</socialPropernessMatters>
+		<tickerType>Rare</tickerType>
+		<healthAffectsPrice>false</healthAffectsPrice>
+		<comps>
+			<li Class="CompProperties_Rottable">
+				<daysToRotStart>3</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<ThingDef Abstract="True" Name="SC_ScavengedFoodMeatRaw" ParentName="SC_ScavengedFoodBase">
+		<ingestible>
+			<ingestEffect>EatVegetarian</ingestEffect>
+			<ingestSound>RawVegetable_Eat</ingestSound>
+			<foodType>VegetableOrFruit</foodType>
+		</ingestible>
+		<thingCategories>
+			<li>MeatRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Abstract="True" Name="SC_ScavengedFoodVeggyRaw" ParentName="SC_ScavengedFoodBase">
+		<ingestible>
+			<foodType>AnimalProduct</foodType>
+			<ingestEffect>EatMeat</ingestEffect>
+			<ingestSound>RawMeat_Eat</ingestSound>
+		</ingestible>
+		<thingCategories>
+			<li>PlantFoodRaw</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Worm</defName>
+		<label>worm</label>
+		<description>The early bird gets the worm. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Worm</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>20</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.01</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.45</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>GutWorms</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Grub</defName>
+		<label>grub</label>
+		<description>Slimy, yet satisfying. Safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Grub</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Termite</defName>
+		<label>termite</label>
+		<description>Maybe we shouldn't be building with wood... Safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Termite</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.02</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Grasshopper</defName>
+		<label>grasshopper</label>
+		<description>It may be fast, but you were faster. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Grasshopper</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.02</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.8</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MuscleParasites</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Snail</defName>
+		<label>snail</label>
+		<description>It has a little home on its back, how quaint. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Snail</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.3</MarketValue>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>1</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MuscleParasites</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_FreshwaterCrab</defName>
+		<label>freshwater crab</label>
+		<description>It has frighteningly powerful claws. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/FreshwaterCrab</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>1</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>GutWorms</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Frog</defName>
+		<label>frog</label>
+		<description>Not much meat, it's legs are really the only edible portion. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Frog</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.4</MarketValue>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.95</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MuscleParasites</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Catfish</defName>
+		<label>catfish</label>
+		<description>This whiskered fish is a nice find. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Catfish</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<MarketValue>1.8</MarketValue>
+			<Nutrition>0.18</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.95</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MuscleParasites</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_SoftshellTurtle</defName>
+		<label>softshell turtle</label>
+		<description>Quite the delicacy, takes a bit of work but well worth the nutrition. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/SoftshellTurtle</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<MarketValue>1.8</MarketValue>
+			<Nutrition>0.1</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.95</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MuscleParasites</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Mussel</defName>
+		<label>mussel</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Mussel</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>2.6</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Oyster</defName>
+		<label>oyster</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Oyster</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>2.2</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_KingCrab</defName>
+		<label>king crab</label>
+		<description>A huge bounty in a savange wasteland! Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/KingCrab</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>2</MarketValue>
+			<Nutrition>0.45</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.95</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>GutWorms</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Scorpion</defName>
+		<label>scorpion</label>
+		<description>Be sure to remove the stinger before eating! Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Scorpion</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.02</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.65</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>GutWorms</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_Beetle</defName>
+		<label>beetle</label>
+		<description>Hardly edible, but we do what we must to survive. Not safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Beetle</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.02</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.65</FoodPoisonChanceFixedHuman>
+		</statBases>
+		<ingestible>
+			<outcomeDoers>
+				<li Class="IngestionOutcomeDoer_GiveHediff">
+					<hediffDef>MuscleParasites</hediffDef>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_WildrootPotato</defName>
+		<label>wildroot potato</label>
+		<description>This odd potato variant is easily digestible. Safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/WildrootPotato</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>30</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_Lichen</defName>
+		<label>lichen</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Lichen</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.6</MarketValue>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.1</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_Moss</defName>
+		<label>moss</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Moss</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.6</MarketValue>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.1</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_Cattail</defName>
+		<label>cattail</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Cattail</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.4</MarketValue>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_Plantago</defName>
+		<label>plantago</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Plantago</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>40</MaxHitPoints>
+			<MarketValue>0.6</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_WildRice</defName>
+		<label>wild rice</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/WildRice</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>0.9</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_LotusRoot</defName>
+		<label>lotus root</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/LotusRoot</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.06</Nutrition>
+			<FoodPoisonChanceFixedHuman>1</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_WaterLily</defName>
+		<label>water lily</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/WaterLily</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_WaterSpinach</defName>
+		<label>water spinach</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/WaterSpinach</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>80</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.05</Nutrition>
+			<FoodPoisonChanceFixedHuman>0.6</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_Kelp</defName>
+		<label>kelp</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Kelp</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.08</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_Seaweed</defName>
+		<label>seaweed</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Seaweed</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.1</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_FrostBud</defName>
+		<label>frost bud</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/FrostBud</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>100</MaxHitPoints>
+			<MarketValue>0.8</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_PricklyPearCactus</defName>
+		<label>prickly pear cactus</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/PricklyPearCactus</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.04</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+
+	<ThingDef ParentName="SC_ScavengedFoodVeggyRaw">
+		<defName>SC_Aloe</defName>
+		<label>aloe</label>
+		<description>An item scavenged from the ground.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/ScavengedFood/Aloe</texPath>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.03</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+	
+	<ThingDef ParentName="SC_ScavengedFoodMeatRaw">
+		<defName>SC_PetrifiedSpiderEgg</defName>
+		<label>petrified spider egg</label>
+		<description>It appears this subspecies of minor feralisks encase thier eggs in a thin coat of petrified amber, although the reason for this is unknown. Safe to eat raw.</description>
+		<graphicData>
+			<texPath>Things/Item/Resource/PetrifiedSpiderEgg</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>60</MaxHitPoints>
+			<MarketValue>0.2</MarketValue>
+			<Nutrition>0.3</Nutrition>
+			<FoodPoisonChanceFixedHuman>0</FoodPoisonChanceFixedHuman>
+		</statBases>
+	</ThingDef>
+</Defs>
