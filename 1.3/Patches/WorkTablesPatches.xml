@@ -5,7 +5,7 @@
 		<success>Always</success>
 		<operations>
 			<li Class="PatchOperationAdd">
-				<xpath>Defs/ThingDef[defName="ElectricStove" or defName="FueledStove" or defName="Campfire"]/recipes</xpath>
+				<xpath>Defs/ThingDef[defName="ElectricStove" or defName="FueledStove" or defName="Campfire" or defName="DarkCampfire"]/recipes</xpath>
 				<value>
 					<li>SC_Make_NeolithicDriedMush</li>
 					<li>SC_Make_NeolithicDriedMushBulk</li>

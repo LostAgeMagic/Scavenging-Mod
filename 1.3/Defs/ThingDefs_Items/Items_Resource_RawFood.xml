@@ -115,7 +115,7 @@
 		<ingestible>
 			<outcomeDoers>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>MuscleParasites</hediffDef>
+					<hediffDef>GutWorms</hediffDef>
 				</li>
 			</outcomeDoers>
 		</ingestible>
@@ -137,7 +137,7 @@
 		<ingestible>
 			<outcomeDoers>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>MuscleParasites</hediffDef>
+					<hediffDef>GutWorms</hediffDef>
 				</li>
 			</outcomeDoers>
 		</ingestible>
@@ -181,7 +181,7 @@
 		<ingestible>
 			<outcomeDoers>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>MuscleParasites</hediffDef>
+					<hediffDef>GutWorms</hediffDef>
 				</li>
 			</outcomeDoers>
 		</ingestible>
@@ -203,7 +203,7 @@
 		<ingestible>
 			<outcomeDoers>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>MuscleParasites</hediffDef>
+					<hediffDef>GutWorms</hediffDef>
 				</li>
 			</outcomeDoers>
 		</ingestible>
@@ -225,7 +225,7 @@
 		<ingestible>
 			<outcomeDoers>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>MuscleParasites</hediffDef>
+					<hediffDef>GutWorms</hediffDef>
 				</li>
 			</outcomeDoers>
 		</ingestible>
@@ -321,7 +321,7 @@
 		<ingestible>
 			<outcomeDoers>
 				<li Class="IngestionOutcomeDoer_GiveHediff">
-					<hediffDef>MuscleParasites</hediffDef>
+					<hediffDef>GutWorms</hediffDef>
 				</li>
 			</outcomeDoers>
 		</ingestible>
